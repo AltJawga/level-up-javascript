@@ -16,7 +16,20 @@
 
   <script>
     // Write your code here
+    function foodTruckFestival(menus) {
+      const masterMenu = new Set(menus.flat(Infinity));
 
+      const menuElement = document.getElementById("combined-menu");
+
+      masterMenu.forEach((item) => {
+        const menuItem = document.createElement("li");
+        menuItem.innerText = item;
+        
+        menuElement.appendChild(menuItem);
+      })
+    }
+
+    foodTruckFestival([["Tacos", "Burgers"], ["Pizza"], ["Burgers", "Fries"]]);
   </script>
 </body>
 
