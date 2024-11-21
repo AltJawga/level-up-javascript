@@ -16,7 +16,28 @@
 
   <script>
     // Write your code here
+    function* trainGenerator() {
+      yield "Poughkeepsie";
+      yield "Newburgh";
+      yield "Peekskill";
+      yield "Yonkers";
+      yield "Bronx";
+      yield "Grand Central";
+    }
 
+    const nycTrain = trainGenerator();
+
+    document.getElementById("next-stop").addEventListener("click", (e) => {
+      const stop = nycTrain.next(); 
+
+      if (stop.done) {
+        console.log("We made it!");
+        e.target.setAttribute("disabled", true);
+      }
+      else {
+        console.log(stop.value);
+      }
+    })
   </script>
 </body>
 
